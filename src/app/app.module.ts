@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NotesListComponent } from './components/notes-list/notes-list.component';
 import { NoteComponent } from './components/note/note.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     InputComponent,
     ButtonComponent,
     NotesListComponent,
-    NoteComponent
+    NoteComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

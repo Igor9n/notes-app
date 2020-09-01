@@ -1,0 +1,13 @@
+<div class="header">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="login-wrapper">
+      <div class="label">Login</div>
+      <app-input ngModel></app-input>
+    </div>
+    <div class="password-wrapper">
+      <div class="label">Password</div>
+      <app-input ngModel></app-input>
+    </div>
+    <app-button label="Sign In"></app-button>
+  </form>
+</div>

@@ -16,7 +16,6 @@ export class AppComponent implements OnInit, OnDestroy {
   loading = true;
 
   constructor(private dataStorageService: DataStorageService, private notesListService: NotesListService) {
-
   }
 
   debug(value) {
@@ -29,11 +28,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.dataStorageService.fetchNotesLists().subscribe(() => this.loading = false);
+    this.dataStorageService.fetchUsers().subscribe();
     this.subscription = this.notesListService.notesListsUpdated.subscribe((notesLists: NotesList[]) => {
       this.notesLists = notesLists;
     });
-
-    console.log('APP NG ON INIT');
   }
 
   ngOnDestroy(): void {

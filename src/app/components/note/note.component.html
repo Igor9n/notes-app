@@ -3,7 +3,11 @@
     <div>
       <div class="description" *ngIf="!editMode; else elseBlock">{{ note.description }}</div>
       <ng-template #elseBlock>
-        <app-input [value]="note.description" (onChange)="onDescriptionChanged($event)"></app-input>
+        <app-input
+          [value]="note.description"
+          (onEnter)="toggleEditMode()"
+          (onChange)="onDescriptionChanged($event)">
+        </app-input>
       </ng-template>
     </div>
   </div>

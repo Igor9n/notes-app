@@ -1,10 +1,11 @@
-<!--<app-input (onChange)="debug($event)"></app-input>-->
-<!--<app-button label="Test"></app-button>-->
+<app-header></app-header>
 <div class="lists-wrapper">
   <ng-container *ngIf="loading; then notes else loading"></ng-container>
   <ng-template #notes>
     <app-notes-list *ngFor="let notesList of notesLists;" [notesList]="notesList"></app-notes-list>
-    <div class="add-notes-list"><app-button label="Add new list" (buttonClicked)="onAddNewNotesList()"></app-button></div>
+    <div class="add-notes-list">
+      <app-button label="Add new list" (buttonClicked)="onAddNewNotesList()"></app-button>
+    </div>
   </ng-template>
   <ng-template #loading>Loading...</ng-template>
 </div>

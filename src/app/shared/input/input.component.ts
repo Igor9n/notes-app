@@ -1,13 +1,14 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
-  template: '<div class="input-wrapper"><input [value]="value" (change)="onValueChanged($event)"/></div>',
+  template: '<div class="input-wrapper"><input [value]="value" (keyup.enter)="onEnterUp()" (change)="onValueChanged($event)"/></div>',
   styleUrls: ['./input.component.scss']
 })
-export class InputComponent implements OnInit, OnChanges {
+export class InputComponent implements OnInit {
   @Input() value = '';
   @Output() onChange: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onEnter: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -15,11 +16,11 @@ export class InputComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  onValueChanged(event) {
-    this.onChange.emit(event.target.value);
+  onEnterUp() {
+    this.onEnter.emit();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('InputComponent', changes);
+  onValueChanged(event) {
+    this.onChange.emit(event.target.value);
   }
 }

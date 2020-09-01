@@ -1,14 +1,12 @@
 import { NotesList } from './notes-list.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { User } from '../user/user.model';
 
 @Injectable({ providedIn: 'root' })
 export class NotesListService {
   public notesListsUpdated = new Subject<NotesList[]>();
-  private notesLists: NotesList[];
-
-  constructor() {
-  }
+  private notesLists: NotesList[] = [];
 
   setNotesLists(notesLists: NotesList[]) {
     this.notesLists = notesLists;
@@ -17,6 +15,10 @@ export class NotesListService {
 
   getNotesLists() {
     return this.notesLists.slice();
+  }
+
+  getNotesListsByUserId(user: User) {
+    return this.notesLists.filter(list => list.userId === user.id);
   }
 
   deleteNotesList(id) {
