@@ -1,0 +1,22 @@
+.input-wrapper {
+  margin: 10px;
+
+  input {
+    outline: unset;
+    height: 25px;
+    padding: 0 5px;
+    border: 2px solid #6bffa150;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+
+    &:hover {
+      border: 2px solid #6bffa125;
+      box-shadow: 0 0 3px 1px aquamarine;
+    }
+
+    &:focus {
+      border: 2px solid #6bffa100;
+      box-shadow: 0 0 10px 2px aquamarine;
+    }
+  }
+}

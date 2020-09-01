@@ -1,0 +1,17 @@
+<div class="list-wrapper">
+  <div class="header">
+    <div class="title" *ngIf="!editMode; else editTitle">{{ notesList.title }}</div>
+    <ng-template #editTitle><app-input [value]="notesList.title" (onChange)="onTitleChanged($event)"></app-input></ng-template>
+    <div class="toggle" (click)="onDeleteNotesList()">D</div>
+    <div class="toggle" (click)="toggleEditMode()">E</div>
+    <div class="toggle" (click)="toggleShowNotes()">{{ showNotes ? '-' : '+' }}</div>
+  </div>
+  <div class="notes-wrapper" *ngIf="showNotes">
+    <app-note
+      (onRemoveControlClicked)="onRemoveNote($event)"
+      (onNoteChanged)="onNoteChanged($event)"
+      *ngFor="let note of notesList.notes" [note]="note">
+    </app-note>
+  </div>
+  <div class="add-note" (click)="onAddNote()">+</div>
+</div>

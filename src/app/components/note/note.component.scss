@@ -1,0 +1,42 @@
+.wrapper {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+
+  .input-field {
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .description {
+      margin: 12px;
+    }
+
+    div {
+      min-height: 25px;
+    }
+  }
+
+  .controls {
+    cursor: pointer;
+    flex-basis: 20%;
+    height: 25px;
+    border: 1px solid red;
+    display: flex;
+
+    .remove-control {
+      font-size: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: red;
+    }
+
+    div {
+      height: 100%;
+      flex-basis: 50%;
+      border: 1px solid red;
+    }
+  }
+}

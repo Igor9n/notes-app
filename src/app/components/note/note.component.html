@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="input-field">
+    <div>
+      <div class="description" *ngIf="!editMode; else elseBlock">{{ note.description }}</div>
+      <ng-template #elseBlock>
+        <app-input [value]="note.description" (onChange)="onDescriptionChanged($event)"></app-input>
+      </ng-template>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="edit-control" (click)="toggleEditMode()">
+      E
+    </div>
+    <div class="remove-control" (click)="onRemoveNote()">
+      -
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.button-wrapper {
+  button {
+    outline: unset;
+    border: unset;
+    background-color: #ffffff;
+    min-width: 80px;
+    min-height: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 1px 1px #2e9dff50;
+    border-radius: 2px;
+
+    &:hover {
+      box-shadow: 0 0 3px 1px #2e9dff75;
+    }
+
+    &:active {
+      box-shadow: 0 0 7px 2px #2e9dff;
+    }
+  }
+}
